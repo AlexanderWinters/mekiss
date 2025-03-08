@@ -10,8 +10,6 @@ const server = createServer((req, res) => {
 
 // Create WebSocket server with more detailed options
 const wss = new WebSocketServer({
-    host: '0.0.0.0',
-    port: 8080,
     server: server,
     clientTracking: true,
     handleProtocols: () => {
