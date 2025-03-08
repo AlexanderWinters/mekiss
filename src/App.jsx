@@ -7,6 +7,7 @@ const WebSocketStates = {
     CLOSING: 2,
     CLOSED: 3
 };
+const WS_HOST = 'localhost';
 
 function App() {
     const [notifications, setNotifications] = useState([]);
@@ -14,7 +15,7 @@ function App() {
     const [isConnected, setIsConnected] = useState(false);
 
     useEffect(() => {
-        const ws = new WebSocket('ws://localhost:8080');
+        const ws = new WebSocket(`ws://${WS_HOST}:8080`);
 
         ws.onopen = () => {
             setIsConnected(true);
